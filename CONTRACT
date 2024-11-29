@@ -1,0 +1,16 @@
+//SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
+
+contract EventContract {
+    event Event1(uint indexed indexedValue1, string indexed indexedValue2);
+    event Event2(address indexed indexedAddress, uint indexed indexedValue);
+    event Event3(uint indexed indexedValue);
+    event Event4(string indexed indexedString);
+
+    function triggerEvents(uint value1, string memory value2, address addr, uint value3, string memory value4) public {
+        emit Event1(value1, value2);
+        emit Event2(addr, value3);
+        emit Event3(value3);
+        emit Event4(value4);
+    }
+}
